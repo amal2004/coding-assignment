@@ -1,0 +1,14 @@
+PERSON Bob Jones
+PLACE Washington
+PERSON Mary
+COMPUTER Mac
+PERSON Bob Jones
+OTHER
+COMPUTER Windows
+ANIMAL Dog
+COMPUTER Mac
+PLACE Texas
+FOOD Steak
+ANIMAL Cat
+COMPUTER Linux
+COMPUTER Licvc 
