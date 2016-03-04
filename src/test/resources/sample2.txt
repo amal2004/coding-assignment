@@ -11,4 +11,4 @@ PLACE Texas
 FOOD Steak
 ANIMAL Cat
 COMPUTER Linux
-COMPUTER Licvc 
+

@@ -14,6 +14,13 @@ import org.junit.rules.ExpectedException;
 import com.amal.neustar.reader.FileReader;
 import com.google.common.collect.Multimap;
 
+
+/**
+ * @author Rohana Weerathunge
+ * Test Cases for FileReader class
+ */
+
+
 public class FileReaderTest {
 	
 	FileReader fileReader;
@@ -29,6 +36,9 @@ public class FileReaderTest {
 		fileReader = null;
 	}
 
+	/**
+	 * Tests the File Reader with valid file path
+	 */
 	@Test
 	public void testReadFilePositive() {     
 		fileReader = new FileReader(filePath);
@@ -36,14 +46,18 @@ public class FileReaderTest {
 		assertTrue(map.entries().size() >= 0);
 	}
 	
-	
+	/**
+	 * Tests the File Reader with null value for file path
+	 */
 	@Test(expected=NullPointerException.class)
 	public void testReadFileNullPath() { 
 		fileReader = new FileReader(filePathNull);
 		fileReader.readFile();	
 	}
 	
-	
+	/**
+	 * Tests for valid category and its count
+	 */
 	@Test
 	public void testCategoryCount() {     
 		fileReader = new FileReader(filePath);
@@ -52,6 +66,9 @@ public class FileReaderTest {
 	}
 	
 
+	/**
+	 * Tests for duplicate key value pairs
+	 */
 	@Test
 	public void testDuplicatePairs() {
 		fileReader = new FileReader(filePath);
@@ -59,7 +76,9 @@ public class FileReaderTest {
 		assertEquals(2, map.get("PERSON").size());
 	}
 	
-	
+	/**
+	 * Tests for category without sub-category
+	 */
 	@Test
 	public void testEmptyCategory() {
 		fileReader = new FileReader(filePath);
@@ -67,6 +86,9 @@ public class FileReaderTest {
 		assertEquals(0, map.get("OTHER").size());
 	}
 
+	/**
+	 * Tests if empty category shows 0 count
+	 */
 	@Test
 	public void zeroForEmptyCategory() {
 		
@@ -78,6 +100,9 @@ public class FileReaderTest {
 	}
 	
 	
+	/**
+	 * Tests for legal category list
+	 */
 	@Test
 	public void testForValidCategories(){
 		
